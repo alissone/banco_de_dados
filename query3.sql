@@ -1,5 +1,6 @@
 SELECT Sum(sl.item_cnt_day)                 AS "Vendas",
-       substr ("--JanFevMarAbrMaiJunJulAgoSetOutNovDez", strftime ("%m", sl.date) * 3, 3) AS "Mês",
+       substr ("--JanFevMarAbrMaiJunJulAgoSetOutNovDez",
+       strftime ("%m", sl.date) * 3, 3)     AS "Mês",
        printf("$ %.2f", Avg(sl.item_price)) AS "Preço Médio",
        it.item_name                         AS "Nome do item",
        ct.item_category_name                AS "Categoria"
